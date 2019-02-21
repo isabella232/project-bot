@@ -30,6 +30,7 @@ class IssuesHandler {
    * @param {Application} app The probot application
    * @param {Object} actionParams Additional openwhisk action params
    */
+  // eslint-disable-next-line no-unused-vars
   init(app, actionParams = {}) {
     app.log('Fastly Purger loaded.');
     this._cfg = null;
@@ -42,6 +43,7 @@ class IssuesHandler {
    * Push event handler. Reads the config and triggers purge-all on the configured
    * Fastly service.
    */
+  // eslint-disable-next-line class-methods-use-this
   async onIssues(context) {
     const { log, payload: { action, issue } } = context;
     log.debug('issues event received. action=%s', action);
@@ -59,16 +61,15 @@ class IssuesHandler {
     try {
       for (const col of cfg.columns) {
         log.debug('adding issue %s to column %s', issue.id, col);
+        // eslint-disable-next-line no-await-in-loop
         const result = await context.github.projects.createCard({
           column_id: col,
           content_id: issue.id,
           content_type: 'Issue',
         });
-        console.log(result);
         log.debug(result);
       }
     } catch (e) {
-      console.log(e);
       log.error('error while adding issue: %s', e);
     }
   }

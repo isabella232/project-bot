@@ -36,6 +36,11 @@ columns:
   - 12345
 ```
 
+The easiest way to get the column id for your project, is the click on the little menu icon of a
+column and use `copy the column link`. eg:
+
+`https://github.com/orgs/adobe-rnd/projects/1#column-4501999` -> `4501999`
+
 ### Note on Secrets
 
 Currently the `secrets` directory contains the blackbox (PGP) encrypted files for production,

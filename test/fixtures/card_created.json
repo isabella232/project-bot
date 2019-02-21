@@ -1,0 +1,32 @@
+{
+  "url": "https://api.github.com/projects/columns/cards/17921103",
+  "project_url": "https://api.github.com/projects/2210547",
+  "id": 17921103,
+  "node_id": "MDExOlByb2plY3RDYXJkMTc5MjExMDM=",
+  "note": null,
+  "archived": false,
+  "creator": {
+    "login": "tripodsan",
+    "id": 917628,
+    "node_id": "MDQ6VXNlcjkxNzYyOA==",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/917628?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tripodsan",
+    "html_url": "https://github.com/tripodsan",
+    "followers_url": "https://api.github.com/users/tripodsan/followers",
+    "following_url": "https://api.github.com/users/tripodsan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tripodsan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tripodsan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tripodsan/subscriptions",
+    "organizations_url": "https://api.github.com/users/tripodsan/orgs",
+    "repos_url": "https://api.github.com/users/tripodsan/repos",
+    "events_url": "https://api.github.com/users/tripodsan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tripodsan/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "created_at": "2019-02-21T07:53:31Z",
+  "updated_at": "2019-02-21T07:53:31Z",
+  "column_url": "https://api.github.com/projects/columns/4501720",
+  "content_url": "https://api.github.com/repos/tripodsan/hlxtest/issues/36"
+}
