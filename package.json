@@ -1,0 +1,66 @@
+{
+  "name": "org-project-bot",
+  "version": "1.0.0",
+  "description": "Org Project Bot",
+  "author": "",
+  "license": "Apache-2.0",
+  "repository": "git@github.com:adobe-rnd/project-bot.git",
+  "homepage": "https://github.com/adobe-rnd/project-bot",
+  "bugs": "https://github.com/adobe-rnd/project-bot/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "probot run ./src/thanks_for_the_fish.js",
+    "lint": "eslint .",
+    "test": "nyc mocha && npm run lint",
+    "test-ci": "npm run lint && nyc mocha --reporter mocha-junit-reporter && nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "build": "wskbot",
+    "deploy": "wskbot --deploy --test --no-hints"
+  },
+  "wsk": {
+    "name": "projectbot@1.0.0/main",
+    "params-file": [
+      "secrets/secrets.env"
+    ],
+    "github-key": "secrets/orgprojectbot.2019-02-20.private-key.pem"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "js-yaml": "^3.12.1",
+    "probot": "^7.5.0",
+    "probot-commands": "^1.1.0",
+    "probot-serverless-openwhisk": "0.13.3"
+  },
+  "devDependencies": {
+    "ajv": "^6.9.1",
+    "codecov": "^3.2.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-header": "^3.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.0",
+    "mocha": "^6.0.0",
+    "mocha-junit-reporter": "^1.18.0",
+    "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
+    "request": "^2.88.0",
+    "sinon": "^7.2.4",
+    "smee-client": "^1.0.2"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  }
+}

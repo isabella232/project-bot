@@ -1,6 +1,18 @@
-/.blackbox/pubring.gpg~
-/.blackbox/pubring.kbx~
-/.blackbox/secring.gpg
-/secrets/secrets.env
-/secrets/orgprojectbot.2019-02-20.private-key.pem
+node_modules
+npm-debug.log
+*.pem
+.env
+coverage
+dist
+.nyc_output
+generated
+coverage.lcov
+test-results.xml
+# secrets used by blackbox itself
+.blackbox/pubring.kbx~
+.blackbox/secring.gpg
+helix-github-app-v1.2018-09-13.private-key.pem
 /secrets/wskprops.env
+/actions/mail-sink/secrets/secrets.env
+/secrets/helix-bot.2018-10-22.private-key.pem
+/actions/login/secrets/secrets.env
