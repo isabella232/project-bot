@@ -20,12 +20,13 @@ module.exports = `
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Org Action Bot</title>
+    <title>Organisation Projects Bot</title>
   </head>
   <body>
-    <h1>Ord Action Bot v${version}</h1>
+    <h1>Organisation Projects Bot v${version}</h1>
     <p></p>
-    <p><a href="https://www.project-helix.io/docs/">Documentation</a></p>
+    <p><a href="https://github.com/adobe-rnd/project-bot/blob/master/README.md">Documentation</a></p>
+    <p><a href="https://github.com/apps/orgprojectbot">Configure</a></p>
   </body>
 </html>
 `;

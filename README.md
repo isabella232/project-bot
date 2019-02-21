@@ -1,10 +1,10 @@
-# Helix Bot
+# Organization Project Bot
 
-> Helix Bot built with [Probot](https://probot.github.io)
+> Organization Project Bot built with [Probot](https://probot.github.io)
 
 ## Status
-[![CircleCI](https://circleci.com/gh/adobe/helix-bot.svg?style=svg&circle-token=881af8825a77a2c88922d86d8fd6decd9047f27a)](https://circleci.com/gh/adobe/helix-bot)
-[![Greenkeeper badge](https://badges.greenkeeper.io/adobe/helix-bot.svg?token=14b0c63e7875729e718d22494d60ec5f411d99b6bc90b8ea1a24e649ab4da5f9&ts=1539082697072)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/adobe-rnd/project-bot.svg?style=svg&circle-token=881af8825a77a2c88922d86d8fd6decd9047f27a)](https://circleci.com/gh/adobe-rnd/project-bot)
+[![Greenkeeper badge](https://badges.greenkeeper.io/adobe-rnd/project-bot.svg?token=14b0c63e7875729e718d22494d60ec5f411d99b6bc90b8ea1a24e649ab4da5f9&ts=1539082697072)](https://greenkeeper.io/)
 <!-- 
 [![codecov](https://img.shields.io/codecov/c/github/adobe-rnd/project-bot.svg)](https://codecov.io/gh/adobe-rnd/project-bot)
 [![CircleCI](https://img.shields.io/circleci/token/881af8825a77a2c88922d86d8fd6decd9047f27a/project/github/adobe-rnd/project-bot.svg)](https://circleci.com/gh/adobe-rnd/project-bot)
@@ -27,7 +27,7 @@ https://github.com/apps/orgprojectbot
 
 ## Configuration
 
-The Helix Bot app needs a configuration file `.github/org-project-bot.yaml` that contains the 
+The Organization Project Bot app needs a configuration file `.github/org-project-bot.yaml` that contains the 
 list of projects it should add new issues to:
 
 ```yaml
@@ -72,7 +72,7 @@ $ npm run deploy
 
 ## Contributing
 
-If you have suggestions for how the helix bot could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
+If you have suggestions for how the this bot could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
 
 For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
