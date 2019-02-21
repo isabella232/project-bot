@@ -46,7 +46,7 @@ class IssuesHandler {
     const { log, payload: { action, issue } } = context;
     log.debug('issues event received. action=%s', action);
 
-    if (issue !== 'openened') {
+    if (action !== 'opened') {
       return;
     }
 
@@ -56,12 +56,19 @@ class IssuesHandler {
       return;
     }
 
-
     try {
-      for (let col of cfg.columns) {
+      for (const col of cfg.columns) {
         log.debug('adding issue %s to column %s', issue.id, col);
+        const result = await context.github.projects.createCard({
+          column_id: col,
+          content_id: issue.id,
+          content_type: 'Issue',
+        });
+        console.log(result);
+        log.debug(result);
       }
     } catch (e) {
+      console.log(e);
       log.error('error while adding issue: %s', e);
     }
   }
