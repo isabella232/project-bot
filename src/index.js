@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-const { OpenWhiskWrapper } = require('probot-serverless-openwhisk');
+const { OpenWhiskWrapper } = require('@adobe/probot-serverless-openwhisk');
 const IssuesHandler = require('./issues.js');
 const index = require('./views/default.js');
 

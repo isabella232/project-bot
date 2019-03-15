@@ -45,8 +45,8 @@ class IssuesHandler {
    */
   // eslint-disable-next-line class-methods-use-this
   async onIssues(context) {
-    const { log, payload: { action, issue } } = context;
-    log.debug('issues event received. action=%s', action);
+    const { log, payload: { action, issue, repository } } = context;
+    log.debug('issues event received. action=%s issue=%s', action, issue.html_url);
 
     if (action !== 'opened') {
       return;
@@ -54,7 +54,7 @@ class IssuesHandler {
 
     const cfg = await context.config(BOT_CONFIG);
     if (!cfg || !cfg.columns) {
-      log.info(`no .github/${BOT_CONFIG} or no 'columns' configured.`);
+      log.info(`no .github/${BOT_CONFIG} or no 'columns' configured in ${repository.html_url}.`);
       return;
     }
 
