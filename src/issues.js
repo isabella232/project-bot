@@ -32,7 +32,7 @@ class IssuesHandler {
    */
   // eslint-disable-next-line no-unused-vars
   init(app, actionParams = {}) {
-    app.log('Fastly Purger loaded.');
+    app.log('Issue handler loaded.');
     this._cfg = null;
 
     // register event handlers

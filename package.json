@@ -23,14 +23,17 @@
     "deploy": "wskbot --deploy --test --no-hints"
   },
   "wsk": {
-    "name": "projectbot@1.0.0/main",
+    "name": "projectbot/main@1.0.0",
     "params-file": [
       "secrets/secrets.env"
+    ],
+    "static": [
+      "views/index.hbs"
     ],
     "github-key": "secrets/orgprojectbot.2019-02-20.private-key.pem"
   },
   "dependencies": {
-    "@adobe/probot-serverless-openwhisk": "0.14.2",
+    "@adobe/probot-serverless-openwhisk": "3.0.1",
     "fs-extra": "^7.0.1",
     "js-yaml": "^3.12.2",
     "probot": "^9.0.1"

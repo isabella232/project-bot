@@ -9,11 +9,13 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-const { OpenWhiskWrapper } = require('@adobe/probot-serverless-openwhisk');
+const { OpenWhiskWrapper, ViewsHelper } = require('@adobe/probot-serverless-openwhisk');
 const IssuesHandler = require('./issues.js');
-const index = require('./views/default.js');
 
 module.exports.main = new OpenWhiskWrapper()
-  .withHandler(IssuesHandler.loader())
-  .withRoute('default', index)
+  .withApp(IssuesHandler.loader())
+  .withApp(new ViewsHelper()
+    .withView('/index.html', 'index.hbs')
+    .withRedirect('/', '/index.html')
+    .register())
   .create();
