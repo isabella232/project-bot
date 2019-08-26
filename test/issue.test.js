@@ -40,7 +40,7 @@ const mockGithubProjects = {
 async function createApp(handler, cfg) {
   const app = new Application();
 
-  app.load(p => handler.init(p, {}));
+  app.load((p) => handler.init(p, {}));
 
   // mock github
   const github = {
