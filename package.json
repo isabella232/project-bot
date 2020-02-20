@@ -39,7 +39,7 @@
   "devDependencies": {
     "@adobe/openwhisk-probot-builder": "^1.0.0",
     "ajv": "^6.10.2",
-    "codecov": "^3.5.0",
+    "codecov": "^3.6.5",
     "eslint": "^6.2.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-header": "^3.0.0",
