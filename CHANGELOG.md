@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/adobe-rnd/project-bot/compare/v1.0.0...v1.0.1) (2020-06-25)
+
+
+### Bug Fixes
+
+* fix encrypt.html ([#11](https://github.com/adobe-rnd/project-bot/issues/11)) ([72a3230](https://github.com/adobe-rnd/project-bot/commit/72a323062dc0d20d32dcd96bc8aa2c8b81da1379))
+
 # 1.0.0 (2020-06-25)
 
 
