@@ -64,7 +64,7 @@ $ gpg --homedir=.blackbox -k
 pub   rsa4096 2011-11-08 [SC]
       B01CBCA715A4D5B48429951130CF96D22E183FB4
 uid           [ unknown] Tobias Bocanegra <tripod@apache.org>
-uid           [ unknown] Tobias Bocanegra <tripod@adobe.com>
+uid           [ unknown] Tobias Bocanegra <test-user@adobe.com>
 sub   rsa4096 2011-11-08 [E]
 
 pub   rsa4096 2018-09-22 [SC] [expires: 2022-09-22]

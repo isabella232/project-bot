@@ -11,11 +11,19 @@
  */
 const { OpenWhiskWrapper, ViewsHelper } = require('@adobe/probot-serverless-openwhisk');
 const IssuesHandler = require('./issues.js');
+const PushHandler = require('./push.js');
+const encrypt = require('./crypt.js');
 
-module.exports.main = new OpenWhiskWrapper()
+const wrapper = new OpenWhiskWrapper()
   .withApp(IssuesHandler.loader())
+  .withApp(PushHandler.loader())
+  .withApp(encrypt.middleware)
   .withApp(new ViewsHelper()
     .withView('/index.html', 'index.hbs')
-    .withRedirect('/', '/index.html')
-    .register())
-  .create();
+    .withView('/encrypt.html', 'encrypt.hbs')
+    .register());
+
+module.exports = {
+  main: wrapper.create(),
+  wrapper,
+};

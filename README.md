@@ -25,7 +25,7 @@ The sole task so far is to assign new issues in related repositories to 1 projec
 
 https://github.com/apps/orgprojectbot
 
-## Configuration
+## Project Configuration
 
 The Organization Project Bot app needs a configuration file `.github/org-project-bot.yaml` that contains the 
 list of projects it should add new issues to:
@@ -41,6 +41,20 @@ column and use `copy the column link`. eg:
 
 `https://github.com/orgs/adobe-rnd/projects/1#column-4501999` -> `4501999`
 
+## Touch Action Configuration
+
+The touch action bot is used to trigger CI builds if a configured user pushes to a branch.
+
+```yaml
+touch:
+  user: renovate-bot
+  github-token: xxff==
+```
+
+The github token needs to be encrypted with the bot's publioc key. this can be done here:
+
+https://adobeioruntime.net/api/v1/web/helix/projectbot/main@v1/encrypt.html
+
 ### Note on Secrets
 
 Currently the `secrets` directory contains the blackbox (PGP) encrypted files for production,
@@ -54,7 +68,7 @@ keys in a separate branch, or completely somewhere else.
 npm install
 ```
 
-The project uses [probot-serverless-openwhisk/](https://github.com/tripodsan/probot-serverless-openwhisk/) to
+The project uses [probot-serverless-openwhisk/](https://github.com/test-user/probot-serverless-openwhisk/) to
 run and its commandline tool `wskbot` for deployment. run `wskbot --help` for details.
 
 To build the openwhisk action with details, run:

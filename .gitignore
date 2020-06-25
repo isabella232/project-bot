@@ -16,3 +16,4 @@ helix-github-app-v1.2018-09-13.private-key.pem
 /actions/mail-sink/secrets/secrets.env
 /secrets/helix-bot.2018-10-22.private-key.pem
 /actions/login/secrets/secrets.env
+/secrets/orgprojectbot.2019-02-20.public-key.pem

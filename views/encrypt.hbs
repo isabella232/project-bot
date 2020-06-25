@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Organisation Projects Bot v{{pkgJson.version}} | Encrypt Config</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/2.3.1/jsencrypt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+</head>
+<body>
+
+<h1 class="card-title">Project bot secrets encryption</h1>
+<p>Use this form to encrypt confidential values/secrets such as your github token for the project Bot service on GitHub.
+    All encryption is performed in the browser and no values (raw or encrypted) are passed to any server.</p>
+
+<div>
+    <input type="text" class="form-control form-control-dark" id="npmtoken" placeholder="Raw value"><br>
+    <button class="btn btn-success generate_btn">Encrypt</button><br><br>
+    <textarea class="form-control form-control-dark" id="generatedText" cols="30" rows="10" placeholder="Encrypted value"></textarea>
+    <button class="btn btn-secondary copy_btn"><i class="fas fa-copy"></i> Copy</button>
+</div>
+
+<script>
+    $(document).ready(function(){
+        const publicKey = `
+{{publicKey}}
+`;
+
+        $('#npmtoken').text("");
+        $('#generatedText').text("");
+
+        $('.generate_btn').click(function(){
+            var input = $('#npmtoken').val();
+            var crypt = new JSEncrypt();
+            crypt.setKey(publicKey);
+            const encrypted = crypt.encrypt(input, 'sha256');
+            $('#generatedText').text(encrypted.toString('base64'));
+        });
+        $('.copy_btn').click(function(){
+            $('#generatedText').select();
+            document.execCommand('copy');
+            swal("Success!", "The encrypted value has been copied to your clipboard", "success");
+        });
+    });
+</script>
+</body>
+</html>

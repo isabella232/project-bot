@@ -40,8 +40,6 @@ const mockGithubProjects = {
 async function createApp(handler, cfg) {
   const app = new Application();
 
-  app.load((p) => handler.init(p, {}));
-
   // mock github
   const github = {
     repos: {
@@ -56,6 +54,7 @@ async function createApp(handler, cfg) {
   // Passes the mocked out GitHub API into our app instance
   app.auth = () => Promise.resolve(github);
 
+  app.load((p) => handler.init(p, {}));
   return app;
 }
 
