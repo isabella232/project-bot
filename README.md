@@ -4,15 +4,10 @@
 
 ## Status
 [![CircleCI](https://circleci.com/gh/adobe-rnd/project-bot.svg?style=svg&circle-token=881af8825a77a2c88922d86d8fd6decd9047f27a)](https://circleci.com/gh/adobe-rnd/project-bot)
-[![Greenkeeper badge](https://badges.greenkeeper.io/adobe-rnd/project-bot.svg?token=14b0c63e7875729e718d22494d60ec5f411d99b6bc90b8ea1a24e649ab4da5f9&ts=1539082697072)](https://greenkeeper.io/)
-<!-- 
 [![codecov](https://img.shields.io/codecov/c/github/adobe-rnd/project-bot.svg)](https://codecov.io/gh/adobe-rnd/project-bot)
-[![CircleCI](https://img.shields.io/circleci/token/881af8825a77a2c88922d86d8fd6decd9047f27a/project/github/adobe-rnd/project-bot.svg)](https://circleci.com/gh/adobe-rnd/project-bot)
 [![GitHub license](https://img.shields.io/github/license/adobe-rnd/project-bot.svg)](https://github.com/adobe-rnd/project-bot/blob/master/LICENSE.txt)
 [![GitHub issues](https://img.shields.io/github/issues/adobe-rnd/project-bot.svg)](https://github.com/adobe-rnd/project-bot/issues)
-[![Greenkeeper badge](https://badges.greenkeeper.io/adobe-rnd/project-bot.svg)](https://greenkeeper.io/)
 [![LGTM Code Quality Grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/adobe-rnd/project-bot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adobe-rnd/project-bot)
--->
 
 ## Overview
 
