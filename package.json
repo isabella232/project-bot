@@ -22,7 +22,7 @@
     "build": "wskbot",
     "deploy": "wskbot --deploy --test=/ping --no-hints",
     "deploy-sequences": "wskbot --no-build -no-hints -l latest -l major -l minor",
-    "deploy-ci": "wskbot -v --deploy --test=/index.html --pkgVersion=ci$CIRCLE_BUILD_NUM",
+    "deploy-ci": "wskbot -v --deploy --test=/encrypt.html --pkgVersion=ci$CIRCLE_BUILD_NUM",
     "update-package": "wskbot --no-build --no-hints --update-package",
     "semantic-release": "semantic-release"
   },
@@ -35,7 +35,7 @@
     },
     "static": [
       "views/index.hbs",
-      "vieew/encrypt.hbs"
+      "view/encrypt.hbs"
     ],
     "github-key": "secrets/orgprojectbot.2019-02-20.private-key.pem"
   },
