@@ -20,7 +20,7 @@
     "test": "nyc mocha && npm run lint",
     "test-ci": "npm run lint && nyc mocha --reporter mocha-junit-reporter && nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "build": "wskbot",
-    "deploy": "wskbot --deploy --test=/ping --no-hints",
+    "deploy": "wskbot --deploy --test=/encrypt.html --no-hints",
     "deploy-sequences": "wskbot --no-build -no-hints -l latest -l major -l minor",
     "deploy-ci": "wskbot -v --deploy --test=/encrypt.html --pkgVersion=ci$CIRCLE_BUILD_NUM",
     "update-package": "wskbot --no-build --no-hints --update-package",
@@ -35,7 +35,7 @@
     },
     "static": [
       "views/index.hbs",
-      "view/encrypt.hbs"
+      "views/encrypt.hbs"
     ],
     "github-key": "secrets/orgprojectbot.2019-02-20.private-key.pem"
   },
