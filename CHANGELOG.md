@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/adobe-rnd/project-bot/compare/v1.0.2...v1.0.3) (2020-07-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency probot to v9.11.6 ([f4e88bb](https://github.com/adobe-rnd/project-bot/commit/f4e88bbdc187cf8015fc3427fac9f7f21545a011))
+
 ## [1.0.2](https://github.com/adobe-rnd/project-bot/compare/v1.0.1...v1.0.2) (2020-06-29)
 
 
