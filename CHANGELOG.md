@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/adobe-rnd/project-bot/compare/v1.0.7...v1.0.8) (2020-11-21)
+
+
+### Bug Fixes
+
+* remove unused code and update to latest probot ([7b3b888](https://github.com/adobe-rnd/project-bot/commit/7b3b888f3b22ed2567353df3077f676dcce60ea5)), closes [#54](https://github.com/adobe-rnd/project-bot/issues/54) [#56](https://github.com/adobe-rnd/project-bot/issues/56) [#57](https://github.com/adobe-rnd/project-bot/issues/57)
+
 ## [1.0.7](https://github.com/adobe-rnd/project-bot/compare/v1.0.6...v1.0.7) (2020-10-12)
 
 
