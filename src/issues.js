@@ -31,7 +31,7 @@ class IssuesHandler {
    * @param {Object} actionParams Additional openwhisk action params
    */
   // eslint-disable-next-line no-unused-vars
-  init(app, actionParams = {}) {
+  init({ app }, actionParams = {}) {
     app.log.debug('Issue handler loaded.');
     this._cfg = null;
 

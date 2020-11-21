@@ -12,8 +12,11 @@
 
 /* eslint-env mocha */
 
-const { Application } = require('probot');
+const crypto = require('crypto');
+const path = require('path');
 const sinon = require('sinon');
+const yaml = require('js-yaml');
+const { OpenWhiskWrapper } = require('@adobe/probot-serverless-openwhisk');
 
 const IssuesHandler = require('../src/issues.js');
 const openedPayload = require('./fixtures/issue_opened.json');
@@ -32,30 +35,67 @@ foo:
 
 const TEST_CONFIG_EMPTY = '';
 
+const TEST_GITHUB_PRIV_KEY = path.resolve(__dirname, 'fixtures', 'test-github-private-key-pem.txt');
+
+const TEST_WEBHOOK_SECRET = 'testSecret';
+
 const mockGithubProjects = {
   createCard: sinon.stub().returns(cardCreatedResposne),
 };
 
-// TODO: invoke openwhisk action or figure out how to test failures....
-async function createApp(handler, cfg) {
-  const app = new Application();
-
-  // mock github
-  const github = {
-    repos: {
-      getContents: sinon.stub().returns({
-        data: {
-          content: Buffer.from(cfg).toString('base64'),
-        },
-      }),
+async function createTestPayload(payloadJson, params = {}) {
+  const payload = JSON.stringify(payloadJson);
+  const signature = crypto.createHmac('sha1', TEST_WEBHOOK_SECRET).update(payload, 'utf-8').digest('hex');
+  return {
+    __ow_method: 'post',
+    __ow_path: '/',
+    __ow_body: Buffer.from(payload).toString('base64'),
+    __ow_headers: {
+      'content-type': 'application/json',
+      'x-github-event': 'issues',
+      'x-github-delivery': 1234,
+      'x-hub-signature': `sha1=${signature}`,
     },
-    projects: mockGithubProjects,
+    ...params,
   };
-  // Passes the mocked out GitHub API into our app instance
-  app.auth = () => Promise.resolve(github);
+}
 
-  app.load((p) => handler.init(p, {}));
-  return app;
+function injectAppMocks(handlerInit, rawConfig) {
+  return (probot, params = {}) => {
+    const { app } = probot;
+
+    const config = yaml.safeLoad(rawConfig);
+    // mock github
+    const github = {
+      config: {
+        get: async () => ({
+          files: [{
+            config,
+          }],
+          config,
+        }),
+      },
+      projects: mockGithubProjects,
+      apps: {
+        getAuthenticated: async () => ({
+          data: {
+            events: ['push'],
+          },
+        }),
+      },
+    };
+
+    // hijack 'on' registration to inject our github mock
+    const originalOn = app.on.bind(app);
+    // eslint-disable-next-line arrow-body-style,no-param-reassign
+    app.on = (evt, fn) => {
+      return originalOn(evt, (context) => {
+        context.github = github;
+        return fn(context);
+      });
+    };
+    return handlerInit(probot, params);
+  };
 }
 
 describe('Issues Tests', () => {
@@ -64,33 +104,40 @@ describe('Issues Tests', () => {
   });
 
   it('triggers create columns when issue openend event received.', async () => {
-    const handler = new IssuesHandler();
-    const app = await createApp(handler, TEST_CONFIG);
-    await app.receive({
-      name: 'issues',
-      payload: openedPayload,
-    });
+    const main = new OpenWhiskWrapper()
+      .withGithubPrivateKey(TEST_GITHUB_PRIV_KEY)
+      .withWebhookSecret(TEST_WEBHOOK_SECRET)
+      .withApp(injectAppMocks(IssuesHandler.loader(), TEST_CONFIG))
+      .withGithubToken('dummy')
+      .create();
+
+    await main(await createTestPayload(openedPayload));
+
     sinon.assert.calledWith(mockGithubProjects.createCard, { column_id: 42, content_id: 412796400, content_type: 'Issue' });
     sinon.assert.calledWith(mockGithubProjects.createCard, { column_id: 99, content_id: 412796400, content_type: 'Issue' });
   });
 
   it('requires a config.', async () => {
-    const handler = new IssuesHandler();
-    const app = await createApp(handler, TEST_CONFIG_EMPTY);
-    await app.receive({
-      name: 'issues',
-      payload: openedPayload,
-    });
+    const main = new OpenWhiskWrapper()
+      .withGithubPrivateKey(TEST_GITHUB_PRIV_KEY)
+      .withWebhookSecret(TEST_WEBHOOK_SECRET)
+      .withApp(injectAppMocks(IssuesHandler.loader(), TEST_CONFIG_EMPTY))
+      .withGithubToken('dummy')
+      .create();
+
+    await main(await createTestPayload(openedPayload));
     sinon.assert.notCalled(mockGithubProjects.createCard);
   });
 
   it('needs columns.', async () => {
-    const handler = new IssuesHandler();
-    const app = await createApp(handler, TEST_CONFIG_NO_COLUMNS);
-    await app.receive({
-      name: 'issues',
-      payload: openedPayload,
-    });
+    const main = new OpenWhiskWrapper()
+      .withGithubPrivateKey(TEST_GITHUB_PRIV_KEY)
+      .withWebhookSecret(TEST_WEBHOOK_SECRET)
+      .withApp(injectAppMocks(IssuesHandler.loader(), TEST_CONFIG_NO_COLUMNS))
+      .withGithubToken('dummy')
+      .create();
+
+    await main(await createTestPayload(openedPayload));
     sinon.assert.notCalled(mockGithubProjects.createCard);
   });
 });
