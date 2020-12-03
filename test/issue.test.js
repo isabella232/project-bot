@@ -91,6 +91,7 @@ function injectAppMocks(handlerInit, rawConfig) {
     app.on = (evt, fn) => {
       return originalOn(evt, (context) => {
         context.github = github;
+        context.octokit = github;
         return fn(context);
       });
     };
