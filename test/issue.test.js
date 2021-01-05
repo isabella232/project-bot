@@ -64,7 +64,7 @@ function injectAppMocks(handlerInit, rawConfig) {
   return (probot, params = {}) => {
     const { app } = probot;
 
-    const config = yaml.safeLoad(rawConfig);
+    const config = yaml.load(rawConfig);
     // mock github
     const github = {
       config: {
