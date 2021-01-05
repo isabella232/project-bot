@@ -109,11 +109,11 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - main
                 - /dev\/.*/
       - semantic-release:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: main
