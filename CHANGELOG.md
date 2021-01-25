@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/adobe-rnd/project-bot/compare/v1.0.13...v1.0.14) (2021-01-25)
+
+
+### Bug Fixes
+
+* **deps:** update external fixes ([792064f](https://github.com/adobe-rnd/project-bot/commit/792064f3aefdf26374f6b865cb4b2cf4cd50a1a3))
+
 ## [1.0.13](https://github.com/adobe-rnd/project-bot/compare/v1.0.12...v1.0.13) (2021-01-11)
 
 
