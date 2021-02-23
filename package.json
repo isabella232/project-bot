@@ -45,7 +45,7 @@
     "probot": "11.0.6"
   },
   "devDependencies": {
-    "@adobe/eslint-config-helix": "1.1.3",
+    "@adobe/eslint-config-helix": "1.1.4",
     "@adobe/openwhisk-probot-builder": "1.0.53",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/exec": "5.0.0",
