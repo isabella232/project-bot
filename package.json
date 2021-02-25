@@ -40,7 +40,7 @@
     "github-key": "secrets/orgprojectbot.2019-02-20.private-key.pem"
   },
   "dependencies": {
-    "@adobe/probot-serverless-openwhisk": "4.0.48",
+    "@adobe/probot-serverless-openwhisk": "4.0.49",
     "fs-extra": "9.1.0",
     "probot": "11.0.6"
   },
