@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/adobe-rnd/project-bot/compare/v1.0.16...v1.0.17) (2021-02-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/probot-serverless-openwhisk to v4.0.48 ([#97](https://github.com/adobe-rnd/project-bot/issues/97)) ([e3d7ffd](https://github.com/adobe-rnd/project-bot/commit/e3d7ffdc32d33064205b18664b1cf51f4315e705))
+
 ## [1.0.16](https://github.com/adobe-rnd/project-bot/compare/v1.0.15...v1.0.16) (2021-02-25)
 
 
