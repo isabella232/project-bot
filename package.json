@@ -40,13 +40,13 @@
     "github-key": "secrets/orgprojectbot.2019-02-20.private-key.pem"
   },
   "dependencies": {
-    "@adobe/probot-serverless-openwhisk": "4.0.53",
+    "@adobe/probot-serverless-openwhisk": "4.0.54",
     "fs-extra": "9.1.0",
     "probot": "11.1.0"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "1.1.4",
-    "@adobe/openwhisk-probot-builder": "1.0.61",
+    "@adobe/openwhisk-probot-builder": "1.0.62",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/exec": "5.0.0",
     "@semantic-release/git": "9.0.0",
