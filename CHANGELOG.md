@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/adobe-rnd/project-bot/compare/v1.0.22...v1.0.23) (2021-05-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to v10 ([#139](https://github.com/adobe-rnd/project-bot/issues/139)) ([906fa81](https://github.com/adobe-rnd/project-bot/commit/906fa81e03e218b0c3b04e97017c8a3986b9adae))
+
 ## [1.0.22](https://github.com/adobe-rnd/project-bot/compare/v1.0.21...v1.0.22) (2021-04-12)
 
 
