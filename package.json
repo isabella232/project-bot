@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@adobe/probot-serverless-openwhisk": "4.0.54",
-    "fs-extra": "9.1.0",
+    "fs-extra": "10.0.0",
     "probot": "11.3.0"
   },
   "devDependencies": {
