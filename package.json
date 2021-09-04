@@ -42,7 +42,7 @@
   "dependencies": {
     "@adobe/probot-serverless-openwhisk": "4.0.54",
     "fs-extra": "10.0.0",
-    "probot": "12.1.0"
+    "probot": "12.1.1"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "1.1.5",
