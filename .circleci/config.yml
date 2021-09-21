@@ -36,7 +36,7 @@ commands:
 
 jobs:
   build:
-    executor: nod12
+    executor: node14
     steps:
       - setup
       - run: mkdir junit
@@ -51,7 +51,7 @@ jobs:
           path: junit
 
   semantic-release:
-    executor: nod12
+    executor: node14
     steps:
       - setup
       - run:
@@ -78,7 +78,7 @@ jobs:
           command: npm run deploy-sequences
 
   branch-deploy:
-    executor: nod12
+    executor: node14
     steps:
       - setup
       - run:
