@@ -47,8 +47,8 @@
   "devDependencies": {
     "@adobe/eslint-config-helix": "1.1.5",
     "@adobe/openwhisk-probot-builder": "1.0.66",
-    "@semantic-release/changelog": "5.0.1",
-    "@semantic-release/exec": "5.0.0",
+    "@semantic-release/changelog": "6.0.0",
+    "@semantic-release/exec": "6.0.1",
     "@semantic-release/git": "10.0.0",
     "ajv": "8.6.3",
     "codecov": "3.8.3",
