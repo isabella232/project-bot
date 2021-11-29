@@ -61,7 +61,7 @@
     "nodemon": "2.0.15",
     "nyc": "15.1.0",
     "request": "2.88.2",
-    "semantic-release": "18.0.0",
+    "semantic-release": "18.0.1",
     "sinon": "12.0.1",
     "smee-client": "1.2.2"
   },
